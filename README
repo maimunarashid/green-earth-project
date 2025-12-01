@@ -1,0 +1,30 @@
+1) What is the difference between var, let, and const?
+ans: var can be redeclared and updated, let can be updated but not redeclared in the same scope, cannot be reassigned but objects/arrays declared with const can still have their contents changed.
+2) What is the difference between map(), forEach(), and filter()?
+ans:map(), returns a new array with transformed values. forEach(), executes a function but does not return a new array, filter(), returns a new array with only the elements that pass a condition.
+3) What are arrow functions in ES6?
+ans: const add = (a, b) => a + b;
+4) How does destructuring assignment work in ES6?
+ans:
+
+example-1
+const [x, y] = [10, 20];
+console.log(x); // 10
+console.log(y); // 20
+
+
+example-2
+const person = { name: "Maimuna", age: 23 };
+const { name, age } = person;
+console.log(name); // "Maimuna"
+console.log(age);  // 22
+
+5) Explain template literals in ES6. How are they different from string concatenation?
+ans:
+const name = "Maimuna";
+const msg = `Hello ${name}, 
+
+Difference:
+1. Concatenation: `"Hello " + name + "!"`
+2. Template literal: `Hello ${name}!`
+

@@ -34,9 +34,10 @@ loadCategories();
 const loadAllTrees  = ()=>{
     fetch("https://openapi.programming-hero.com/api/plants")
     .then(res=>res.json())
-    .then(data=>displayAllTrees(data.plants))
-}
-
+    .then(data=>
+      {
+    displayAllTrees(data.plants)}
+)}
 
 const displayAllTrees = (trees)=>{
     const allTrees = document.getElementById("all-trees");
@@ -145,3 +146,4 @@ const clearBtn = addtoCartContainer.querySelector("i").addEventListener('click',
   cartTotal.innerText = `Total:  ৳${totalPrice}`;
   })
 };
+

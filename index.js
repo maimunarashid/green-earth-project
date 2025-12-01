@@ -56,10 +56,16 @@ const displayAllTrees = (trees)=>{
   <h1 class="bg-green-300 pl-4 pr-4 pt-2 pb-2 font-bold text-green-900 rounded-3xl">${tree.category}</h1>
   <p class="font-bold">৳${tree.price}</p>
 </div>
-<button class="btn bg-green-800 text-center text-white w-[100%] rounded-3xl">Add to Cart</button>
+<button id="plant-${tree.id}" class="btn bg-green-800 text-center text-white w-[100%] rounded-3xl" data-name="${tree.name}" 
+          data-price="${tree.price}">Add to Cart</button>
 </div>`;
 
     allTrees.appendChild(allTreesContainer);
+
+    document.getElementById(`plant-${tree.id}`).addEventListener('click', function(e){
+      e.preventDefault();
+      addToCart(tree); // গাছের নাম ও দাম cart এ পাঠানো হবে
+    })
     })
 }
   
@@ -99,5 +105,43 @@ const displayPlantsByCategories = (trees)=>{
 </div>`;
 
     allTrees.appendChild(allTreesContainer);
+
+    document.getElementById(`plant-${tree.id}`).addEventListener('click', function(e){
+      e.preventDefault();
+      addToCart(tree); // গাছের নাম ও দাম addToCart() এ পাঠানো হবে
+    })
     })
 }
+
+
+
+
+let totalPrice = 0;
+// add to cart btn e click er por
+// Cart এ item যোগ করার ফাংশন
+const addToCart = (item) => {
+  const yourCart = document.getElementById("your-cart");
+  const addtoCartContainer = document.createElement("div");
+  addtoCartContainer.className = "flex justify-between items-center p-2 bg-green-100 rounded-sm m-3";
+
+  addtoCartContainer.innerHTML = `
+    <div>
+      <h1 class="text-green-950 font-bold">${item.name}</h1>
+      <p class="text-gray-400">৳${item.price} × 1</p>
+    </div>
+    <i class="fa-solid fa-xmark text-gray-400"></i>
+  `;
+  const cartTotal = document.getElementById("cart-total");
+  totalPrice += parseInt(item.price) ;
+  cartTotal.innerText = `Total:  ৳${totalPrice}`;
+
+  yourCart.appendChild(addtoCartContainer);
+
+
+const clearBtn = addtoCartContainer.querySelector("i").addEventListener('click', function(e){
+ e.preventDefault();
+  yourCart.removeChild(addtoCartContainer);
+  totalPrice -= parseInt(item.price) ;
+  cartTotal.innerText = `Total:  ৳${totalPrice}`;
+  })
+};

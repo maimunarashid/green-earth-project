@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-green-50">
     <!-- navbar -->
      <div class="navbar bg-green-800 shadow-sm pl-[120px] pr-[120px]">
   <div class="navbar-start">
@@ -41,12 +41,24 @@ generations.</p>
     </div>
     <div><img src="hero-leaf2.png" alt=""></div>
  </div>
+
 <!-- Choose Your Trees -->
- <div class="pt-12 pb-12 pl-[120px] pr-[120px]">
-<h1 class="pb-[40px] text-[24px] text-green-900 font-bold text-center">Choose Your Trees</h1>
- </div>
+
+   <h1 class="pt-12 pb-[40px] text-[24px] text-green-900 font-bold text-center">Choose Your Trees</h1>
+ <div class="pb-12 pl-[120px] pr-[120px] flex">
+  <!-- category part -->
+<div class="flex flex-col" id="all-category">
+</div>
+<!-- card part-->
+<div id="all-trees" class="grid grid-cols-3 w-full gap-3">
+</div>
+<!-- cart part-->
+ <div class="flex flex-col" id="your-cart">
+</div>
+</div>
+
 <!-- About the Campaign -->
-<div class="pb-12 pr-[400px] pl-[400px]">
+<div class="pb-12 pr-[300px] pl-[300px]">
   <h1 class="text-[24px] font-bold text-green-900 text-center pt-12 pb-12">About the Campaign</h1>
    <div class="flex gap-10">
   <div><img src="about.png" alt=""></div>
@@ -67,19 +79,19 @@ generations.</p>
         <h1 class="mb-6 text-[24px] font-bold text-green-900 text-center">Our Impact</h1>
 <div class="flex gap-10 pb-12">
 
-        <div class="bg-white rounded-sm pt-5 pb-5 pl-30 pr-30 text-center">
-          <h1 class="text-green-800 font-bold text-[24px]">500k+</h1>
-          <p class="text-green-800">Trees Planted</p>
+        <div class="bg-white rounded-sm pt-5 pb-5 pl-30 pr-30 text-center hover:bg-green-400 transition-transform duration-300 ease-in-out hover:-translate-y-3 hover:shadow-lg group">
+          <h1 class="text-green-800 font-bold text-[24px] group-hover:text-white duration-300">500k+</h1>
+          <p class="text-green-800 group-hover:text-white">Trees Planted</p>
         </div>
 
-        <div class="bg-white rounded-sm pt-5 pb-5 pl-20 pr-20 text-center">
-          <h1 class="text-green-800 font-bold text-[24px]">120+</h1>
-          <p class="text-green-800">Communities Involved</p>
+        <div class="bg-white rounded-sm pt-5 pb-5 pl-20 pr-20 text-center hover:bg-green-400 transition-transform  duration-300 ease-in-out hover:-translate-y-3 hover:shadow-lg group">
+          <h1 class="text-green-800 font-bold text-[24px] group-hover:text-white">120+</h1>
+          <p class="text-green-800 group-hover:text-white">Communities Involved</p>
         </div>
 
-        <div class="bg-white rounded-sm pt-5 pb-5 pl-20 pr-20 text-center">
-          <h1 class="text-green-800 font-bold text-[24px]">30+</h1>
-          <p class="text-green-800">Countries Reached</p>
+        <div class="bg-white rounded-sm pt-5 pb-5 pl-20 pr-20 text-center hover:bg-green-400 transition-transform duration-300 ease-in-out hover:-translate-y-3 hover:shadow-lg group">
+          <h1 class="text-green-800 font-bold text-[24px] group-hover:text-white">30+</h1>
+          <p class="text-green-800 group-hover:text-white">Countries Reached</p>
         </div>  
 
 </div>
@@ -94,9 +106,9 @@ generations.</p>
     <input class="w-[90%] bg-white rounded-sm p-3" type="email" placeholder="Your Email Address"><br>
     <select class="w-[90%] bg-white rounded-sm p-3">
       <option value=""selected>Number of Trees</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
+      <option value="1">1 tree  -  5৳</option>
+      <option value="2">5 Trees  -  25৳</option>
+      <option value="3">10 Trees  -  50৳</option>
     </select>
     <button class="btn bg-yellow-400 rounded-3xl p-3 w-[90%] text-green-900">Donate Now</button>
 </div>
